@@ -1,17 +1,18 @@
 //Ball Class.. (the ball)
 class Ball {
   constructor() {
-    this.width = 5;
-    this.height = 5;
-    this.x = canvas.width / 2 - this.width / 2;
-    this.y = canvas.height / 2 - this.height / 2;
+    this.radius = 2.5;
+    this.x = canvas.width / 2 - this.radius / 2;
+    this.y = canvas.height / 2 - this.radius / 2;
     this.xv = 3;
     this.yv = 0;
     this.score = 0;
   };
   draw() {
     ctx.fillStyle = "orange";
-    ctx.fillRect(this.x, this.y, this.width, this.height);
+    ctx.beginPath();
+    ctx.fillRect(this.x, this.y, this.radius, this.radius);
+    ctx.fill();
   };  
   update() {
     this.x += this.xv;
@@ -20,8 +21,8 @@ class Ball {
   start() {
     this.xv = 0;
     this.yv = 0;
-    this.x = canvas.width / 2 - this.width / 2;
-    this.y = canvas.height / 2 - this.height / 2;
+    this.x = canvas.width / 2 - this.radius / 2;
+    this.y = canvas.height / 2 - this.radius / 2;
     document.addEventListener("click", () => {
         this.xv = [4, -4][Math.round(Math.random())];
         this.yv = 0;
@@ -30,7 +31,7 @@ class Ball {
   }
   siderules(enemyPlayer, myPlayer) {
     //collision on bottom wall..
-    if (this.y + this.height >= canvas.height) {
+    if (this.y + this.radius >= canvas.height) {
       this.yv = -1;
     }
     //collision on top wall..
@@ -47,10 +48,10 @@ class Ball {
 
 
     //collision on right wall..
-    if (this.x >= canvas.width - this.width + 3.2) {
+    if (this.x >= canvas.width - this.radius + 3.2) {
       myPlayer.myplayer_score++;
     } 
-   if (this.x >= canvas.width - this.width + 3.21) {
+   if (this.x >= canvas.width - this.radius + 3.21) {
     this.start(); 
   }
 }

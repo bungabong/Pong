@@ -2,7 +2,7 @@
 class Paddle {
   constructor(side) {
     this.side = side;
-    this.color = this.side == "left" ? "darkblue" : "yellow";
+    this.color = this.side == "left" ? "darkblue" : "green";
     this.width = 5;
     this.height = 18;
     this.x = this.side == "left" ? 15 : canvas.width - 15;
@@ -27,9 +27,9 @@ class Paddle {
   //My Player Paddle Functionalities..
   spike(ball, side) {
     this.ballTop = ball.y;
-    this.ballBottom = ball.y + ball.height;
+    this.ballBottom = ball.y + ball.radius;
     this.ballLeft = ball.x;
-    this.ballRight = ball.x + ball.width;
+    this.ballRight = ball.x + ball.radius;
     this.paddleLeft = this.x;
     this.paddleRight = this.x + this.width;
     this.paddleTop = this.y;
