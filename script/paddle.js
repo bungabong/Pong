@@ -2,7 +2,7 @@
 class Paddle {
   constructor(side) {
     this.side = side;
-    this.color = this.side == "left" ? "darkblue" : "orange";
+    this.color = this.side == "left" ? "darkblue" : "yellow";
     this.width = 5;
     this.height = 18;
     this.x = this.side == "left" ? 15 : canvas.width - 15;

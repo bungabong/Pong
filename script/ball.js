@@ -10,7 +10,7 @@ class Ball {
     this.score = 0;
   };
   draw() {
-    ctx.fillStyle = "Whitesmoke";
+    ctx.fillStyle = "orange";
     ctx.fillRect(this.x, this.y, this.width, this.height);
   };  
   update() {

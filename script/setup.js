@@ -5,6 +5,8 @@
   enemyPlayer = new Paddle("right");
   window.setInterval(() => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    //Court Design..
+    user_interface.design(ctx);
 
     //Ball Functionalities..
     ball.draw();
@@ -27,9 +29,6 @@
     
     //KeyBoard Controller..
     user_interface.controls(myPlayer);
-
-    //Court Design..
-    user_interface.design(ctx);
     
   }, 15);
 })();
