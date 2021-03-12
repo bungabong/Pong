@@ -9,10 +9,10 @@ class Ball {
     this.score = 0;
   };
   draw() {
-    ctx.fillStyle = "orange";
-    ctx.beginPath();
-    ctx.fillRect(this.x, this.y, this.radius, this.radius);
-    ctx.fill();
+  	ctx.beginPath();
+		ctx.fillStyle = 'orange';
+		ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI, false);
+		ctx.fill();
   };  
   update() {
     this.x += this.xv;
@@ -53,6 +53,6 @@ class Ball {
     } 
    if (this.x >= canvas.width - this.radius + 3.21) {
     this.start(); 
+    }
   }
-}
 }
