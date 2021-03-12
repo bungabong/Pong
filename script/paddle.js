@@ -38,8 +38,16 @@ class Paddle {
     //my Player spike..
     this.my_spike = function() {
       if (this.paddleRight >= this.ballLeft && this.paddleTop < this.ballBottom && this.paddleBottom > this.ballTop) {
-        ball.xv = 4;
-        ball.yv = Math.random() * 2 + Math.random() * (-3) + Math.random() * 3 + Math.random() * (-2);
+        if (this.yv == -2 && ball.xv == -4) {
+           ball.xv = 4;
+           ball.yv = (Math.random() * -2.5) + -1;
+        } else if (this.yv == 2) {
+           ball.xv = 4;
+           ball.yv = (Math.random() * 2.5) + 1;
+        } else {
+           ball.xv = 4;
+           ball.yv = 0;
+        }
 
         if (this.ballLeft <= canvas.width - canvas.width) {
           ball.xv = 0;
@@ -51,8 +59,16 @@ class Paddle {
     //enemy Player spike..
     this.enemy_spike = function() {
       if (this.paddleLeft <= this.ballRight && this.paddleTop < this.ballBottom && this.paddleBottom > this.ballTop) {
-        ball.xv = -4;
-        ball.yv = Math.random() * 2 + Math.random() * (-3) + Math.random() * 3 + Math.random() * (-2);
+        if (this.yv == -2 && ball.xv == 4) {
+          ball.xv = -4;
+          ball.yv = (Math.random() * -2.5) + -1;
+       } else if (this.yv == 2) {
+          ball.xv = -4;
+          ball.yv = (Math.random() * 2.5) + 1;
+       } else {
+          ball.xv = -4;
+          ball.yv = 0;
+       }
 
         if (this.ballRight >= canvas.width) {
           ball.xv = 0;
