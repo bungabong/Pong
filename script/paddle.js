@@ -4,7 +4,7 @@ class Paddle {
     this.side = side;
     this.color = this.side == "left" ? "darkblue" : "green";
     this.width = 5;
-    this.height = 18;
+    this.height = 23;
     this.x = this.side == "left" ? 15 : canvas.width - 15;
     this.y = canvas.height / 2 - this.height / 2;
     this.yv = 0;

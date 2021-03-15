@@ -1,12 +1,12 @@
 //Ball Class.. (the ball)
 class Ball {
-  constructor() {
-    this.radius = 2.5;
-    this.x = canvas.width / 2 - this.radius / 2;
-    this.y = canvas.height / 2 - this.radius / 2;
-    this.xv = 3;
-    this.yv = 0;
-    this.score = 0;
+  constructor(radius, x, y, xv, yv, score) {
+    this.radius = radius;
+    this.x = x;
+    this.y = y;
+    this.xv = xv;
+    this.yv = yv;
+    this.score = score;
   };
   draw() {
   	ctx.beginPath();
@@ -23,11 +23,10 @@ class Ball {
     this.yv = 0;
     this.x = canvas.width / 2 - this.radius / 2;
     this.y = canvas.height / 2 - this.radius / 2;
-    document.addEventListener("click", () => {
-        this.xv = [4, -4][Math.round(Math.random())];
-        this.yv = 0;
-      
-    })
+    setTimeout(() => {
+      this.xv = [4, -4][Math.round(Math.random())];
+      this.yv = 0;
+    },2000);
   }
   siderules(enemyPlayer, myPlayer) {
     //collision on bottom wall..

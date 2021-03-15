@@ -29,11 +29,11 @@ let user_interface = {
   }, 
   //Court Design..
   design: function(ctx) {
-   ctx.beginPath();
-   ctx.moveTo(canvas.width / 2 - 2, canvas.height - canvas.height);
-   ctx.lineTo(canvas.width / 2 - 2, canvas.height);
-   ctx.strokeStyle =  "darkslateblue";
-   ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(canvas.width / 2 - 2, canvas.height - canvas.height);
+    ctx.lineTo(canvas.width / 2 - 2, canvas.height);
+    ctx.strokeStyle =  "darkslateblue";
+    ctx.stroke();
   }
 }
 
